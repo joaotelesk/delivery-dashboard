@@ -1,7 +1,8 @@
 'use client'
 import { Separator } from '@radix-ui/react-separator'
 import { Home, Pizza, UtensilsCrossed } from 'lucide-react'
-import Link from 'next/link'
+
+import { NavLink } from './nav-link'
 
 export function Header() {
   return (
@@ -10,24 +11,18 @@ export function Header() {
         <Pizza className="h-6 w-6" />
         <Separator
           orientation="vertical"
-          className="bg-muted-foreground/10 h-6 w-0.5"
+          className="h-6 w-0.5 bg-muted-foreground/10"
         />
 
         <nav className="flex items-center space-x-4 lg:space-x-6">
-          <Link
-            href="/"
-            className="text-muted-foreground hover:text-foreground flex flex-col items-center gap-1 font-medium"
-          >
+          <NavLink href="/">
             <Home className="h-4 w-4" />
             Início
-          </Link>
-          <Link
-            href="/orders"
-            className="text-muted-foreground hover:text-foreground flex flex-col items-center gap-1 font-medium"
-          >
+          </NavLink>
+          <NavLink href="/orders">
             <UtensilsCrossed className="h-4 w-4" />
             Pedidos
-          </Link>
+          </NavLink>
         </nav>
       </div>
     </header>
